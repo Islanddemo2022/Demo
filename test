@@ -1,28 +1,29 @@
-Robert Aragon	      489-36-8350	----- CCN INFO -----
-Ashley Borden	      514-14-8905	----- CCN INFO -----
-Thomas Conley	      690-05-5315	----- CCN INFO -----
-Susan Davis	        421-37-1396	----- CCN INFO -----
-Christopher Diaz	  458-02-6124	----- CCN INFO -----
-Rick Edwards	      612-20-6832	----- CCN INFO -----
-Victor Faulkner	    300-62-3266	----- CCN INFO -----
-Lisa Garrison	      660-03-8360	----- CCN INFO -----
-Marjorie Green	    213-46-8915	----- CCN INFO -----
-Mark Hall	          449-48-3135	----- CCN INFO -----
-James Heard	        559-81-1301	----- CCN INFO -----
-Albert Iorio	      322-84-2281	----- CCN INFO -----
-Charles Jackson	    646-44-9061	----- CCN INFO -----
-Teresa Kaminski	    465-73-5022	----- CCN INFO -----
-Tim Lowe	          044-34-6954	----- CCN INFO -----
-Monte Mceachern	    477-36-0282	----- CCN INFO -----
-Adriane Morrison	  421-90-3440	----- CCN INFO -----
-Jerome Munsch	      524-02-7657	----- CCN INFO -----
-Agnes Nelson	      205-52-0027	----- CCN INFO -----
-Lynette Oyola	      587-03-2682	----- CCN INFO -----
-Stacey Peacock	    687-05-8365	----- CCN INFO -----
-Julie Renfro	      751-01-2327	----- CCN INFO -----
-Danny Reyes	        624-84-9181	----- CCN INFO -----
-Thomas Santos	      451-80-3526	----- CCN INFO -----
-Mireille Townsend	  404-12-2154	----- CCN INFO -----
-Gail Watson	        461-97-5660	----- CCN INFO -----
-Johnson White	      172-32-1176	----- CCN INFO -----
-Rebecca Zwick	      151-32-2558	----- CCN INFO -----
+#include <stdio.h>
+int main()
+{
+   char name[50];
+   int marks, i, num;
+   printf("Enter number of students: ");
+   scanf("%d", &num);
+   FILE *fptr;
+   fptr = (fopen("C:\\student.txt", "a"));
+   if(fptr == NULL)
+   {
+       printf("Error!");
+       exit(1);
+   }
+   for(i = 0; i < num; ++i)
+   {
+      printf("For student%d\nEnter name: ", i+1);
+      scanf("%s", name);
+      printf("Enter marks: ");
+      scanf("%d", &marks);
+      fprintf(fptr,"\nName: %s \nMarks=%d \n", name, marks);
+   }
+   fclose(fptr);
+   return 0;
+}
+
+
+
+
